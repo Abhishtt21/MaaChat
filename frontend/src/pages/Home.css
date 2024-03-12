@@ -1,0 +1,42 @@
+body { /* Or a more specific wrapper if applicable */
+    background-color: #fcdfba; /* Your light background color */
+  }
+
+.home__bg {
+    background-image: url(../assets/Gemini_Generated_Image.jpeg);
+    height: 92vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    /* background: linear-gradient(to right, #f4b27a, #d97b5c); */
+}
+
+.home-message-icon {
+    margin-left: 10px;
+    display: inline-block;
+    /* color: #d97b5c; */
+}
+
+h1 {
+    font-family: 'Amatic SC', cursive; /* Choose a warm, friendly font */
+    font-size: 3.5rem;
+    color: #d97b5c;
+  }
+  
+  p { 
+    font-family: 'Arial', sans-serif; /* Or any readable sans-serif font */
+    color: #333; /* A dark color for contrast */
+  }
+  
+  .custom-button {
+    outline-color: #d97b5c !important; /* Use !important to override */
+    border-color: #f4b27a !important;  
+    color: #d97b5c !important; 
+    padding: 15px 30px !important;
+    font-size: 1.1rem !important;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  

@@ -1,0 +1,88 @@
+.messages-output {
+    height: 77vh;
+    border: 1px solid lightgray;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+.message, .incoming-message {
+    display: flex; /* Allow for side-by-side elements */
+    margin-bottom: 15px;
+}
+
+.message {
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.incoming-message {
+    justify-content: flex-start;
+    margin-left: 20px;
+} 
+
+.message-inner {
+    padding: 8px; /* Reduced padding */
+    min-width: 150px; 
+    max-width: 70%; 
+    text-align: left;
+    line-height: 1.4;
+    font: 400 1em, sans-serif;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 15px 15px 0 15px; /* Speech bubble for outgoing */
+}
+
+.incoming-message .message-inner {
+    border-radius: 15px 0 15px 15px; /* Speech bubble for incoming */
+}
+
+/* Common bubble styles */
+.message.own {
+    background-color: #dbefff; /* Pastel blue or your chosen color */
+}
+
+.incoming-message .message-inner {
+    background-color: #f7ebeb; /* Pastel pink or your chosen color */
+}
+
+.message-content {
+    margin: 0; 
+}
+
+/* Specific timestamp styles */
+.messages-output .message-inner .message-timestamp-left {
+    font-size: 0.75em;
+    color: rgba(0, 0, 0, 0.6); 
+    margin-top: 5px;
+    text-align: right; 
+}
+
+.message-sender { 
+    margin-bottom: 2px;  
+}
+
+.message-sender::after { 
+    content: "";
+    display: block;
+    width: 80%;  
+    height: 1px;
+    background-color: rgba(0,0,0, 0.2); 
+    margin-bottom: 5px; 
+}
+
+.conversation-info {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    height: 100px;
+}
+
+.conversation-profile-pic {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin: 10px auto;
+    margin-bottom: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
