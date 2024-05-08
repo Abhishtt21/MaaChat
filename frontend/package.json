@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "npm i && vite build",
-    "start":"node ../backend/server.js",
+    "start":"cd ../backend && npm i && npm i bcrypt && npm i express && npm rebuild bcrypt",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
