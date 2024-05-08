@@ -6,6 +6,7 @@ const Message = require('./models/Message')
 const rooms = ["#general","#bump", "#cravings","#milestones","#delivery","#gears"];
 const cors = require('cors');
 require('dotenv').config();
+const path = require('path');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -15,7 +16,12 @@ app.use('/users', userRoutes)
 require('./connection')
 
 const server = require('http').createServer(app);
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4000;
+
+//const dirname = path.dirname("");
+const buildPath = path.join(__dirname,"../frontend/dist");
+app.use(express.static(buildPath));
+
 const io = require('socket.io')(server, {
   cors: {
     origin: process.env.FRONTEND,
@@ -93,6 +99,13 @@ app.get('/rooms', (req, res)=> {
   res.json(rooms)
 })
 
+app.get('/*',(req,res) => {
+  res.sendFile(path.join(buildPath,"index.html"),(err)=>{
+    if(err){
+      res.status(500).json({"msg": err});
+    }
+  })
+});
 
 server.listen(PORT, ()=> {
   console.log('listening to port', PORT)
