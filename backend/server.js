@@ -10,7 +10,7 @@ const path = require('path');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(cors({origin: 'https://maa-chat-g321-vsqsi6fac-abhishtt21s-projects.vercel.app/'}));
+app.use(cors({origin: 'https://maa-chat-g321-abhishtt21s-projects.vercel.app/'}));
 
 app.use('/users', userRoutes)
 require('./connection')
